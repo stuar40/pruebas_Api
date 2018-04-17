@@ -1,0 +1,14 @@
+primero instalar y configurar git
+clonar el repositorio https://github.com/stuar40/pruebas_Api
+abrir atom y abrir la carpeta clonada con el github
+
+cada cambio se hace asi :
+
+
+-- cada que se inicie el proyecto se hace pull para actualizar el repositorio local
+
+-si se edita el codigo se guarda y en la seccion de unstaged changes 
+mostrara los archivos editados en y le damos en la esquina stage all
+luego   le damos en comit si es necesario
+cuando ya consideramos que estan hechos todos los cambio
+ le damos en push

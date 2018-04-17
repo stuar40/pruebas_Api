@@ -1,0 +1,14 @@
+primero se instalo nodejs
+luego express
+instalar body parser
+instalar nodemon para que se reinicie automatico el servidor nodejs
+
+instalar postman
+
+instalar mongodb
+
+
+al inciar proyecto se ejecuta
+ mongodb para que ejecute en segundo plano
+para inicar el servidor
+npm star  star==> es la variable donde se ejecuta el el servidor configurado en index.js  
