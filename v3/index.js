@@ -37,8 +37,12 @@ app.get('/api/dato',function (req,res)
 
 app.get ('/api/dato/:datoId', (req,res) =>
 {
-
-} )
+let datoId = req.params.datoId
+connection.query("SELECT * FROM datos WHERE id_datos = ?",datoId,function (error, results, fields) {
+  if (error) throw error
+  return res.send ({error: false, data: results[0], message: 'Search List' })
+})
+})
 
 app.post ('/api/dato', (req,res) =>
 {
