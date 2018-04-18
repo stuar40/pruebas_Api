@@ -5,6 +5,8 @@ const dato = require ('./models/dato')
 
 const app = require ('./app')
 
+
+
 //llamamos al paquete mysql que hemos instalado
 const mysql = require('mysql'),
 //creamos la conexion a nuestra base de datos con los datos de acceso de cada uno
@@ -17,6 +19,8 @@ connection = mysql.createConnection(
     }
 );
 connection.connect()
+
+
 
 app.listen(port,() =>
 {

@@ -8,14 +8,19 @@ crear index.js normal
 
 crear models/ por cada tabla
 en cada model va una funcion en la cual lleva la consulta por cada
+lleva Funciones o metodos y dentro de estos lleva la consultas de la Base de datos
 
 
 crear controllers se crea  funciones por cada metodo
 dentro de cada metodo de los controllers se llama los
 metodos de los model
 
+realiza fuciones  que llaman a los metodos de los model
+que estos model tiene las consultas
 
-en el indes en cada metodo se envia y se llama a traves de las
+
+
+en el index en cada metodo se envia y se llama a traves de las
 funciones de los controllers
 
 
@@ -24,3 +29,19 @@ archivo app.js
 
 crear archi routes
 por cada tabla o aniadirlo a las rutas
+
+
+
+
+--- models
+creamos los models
+---- controller
+creamos los controllers
+
+---------------routes
+en el index
+cargamos el controllers
+definimos las rutass
+
+-- archivo appp
+ consumimos  los routes 
