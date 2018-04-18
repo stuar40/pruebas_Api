@@ -47,8 +47,22 @@ connection.query("SELECT * FROM datos WHERE id_datos = ?",datoId,function (error
 app.post ('/api/dato', (req,res) =>
 {
   console.log(req.body)
-  res.status(200).send({message: 'Dato recibido correctamente'})
-} )
+  let id_datos = req.body.id_datos
+  let Nombre = req.body.Nombre
+  let Apellido = req.body.Apellido
+  let Direccion = req.body.Direccion
+  let Correo = req.body.Correo
+
+  if (!id_datos) {
+       return res.status(400).send({ error:true, message: 'Please agregaa  dato' })
+            }
+// SET ?,?,?,?,? ",{id_datos:id_datos, Nombre:Nombre, Apellido:Apellido, Direccion:Direccion, Correo:Correo}
+//
+    connection.query ('INSERT INTO  datos (id_datos, Nombre, Apellido, Direccion, Correo) VALUES ("' +id_datos+ '","' +Nombre+ '","' +Apellido+ '","' +Direccion+ '","' +Correo+ '")', function (error, results, fields) {
+      if(error) throw error
+      return res.send({error: false, data: results, message: 'New task has been created successfully.'})
+})
+})
 
 app.put ('/api/dato/:datoId', (req,res) =>
 {
@@ -57,7 +71,11 @@ app.put ('/api/dato/:datoId', (req,res) =>
 
 app.delete ('/api/dato/:datoId', (req,res) =>
 {
-
+  let datoId = req.params.datoId
+  connection.query('DELETE FROM datos WHERE id_datos = ?', [datoId], function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'se ha eliminado con exito' });
+    })
 } )
 
 app.listen(port,() =>
