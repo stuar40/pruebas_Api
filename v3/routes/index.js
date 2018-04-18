@@ -48,7 +48,14 @@ api.delete ('/ubicacion/:ubicacionId',ubicaController.deleteUbicacion)
 
 
 
+//****************************************//
 
 
+const parqueoController = require ('../controllers/parqueo')
+api.get ('/parqueo', parqueoController.getParqueos )
+api.get ('/parqueo/:parqueoId', parqueoController.getParqueo)
+api.post ('/parqueo', parqueoController.postParqueo)
+api.put ('/parqueo/:id_parqueo', parqueoController.updateParqueo )
+api.delete ('/parqueo/:parqueoId', parqueoController.deleteParqueo)
 
 module.exports = api
