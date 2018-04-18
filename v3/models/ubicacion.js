@@ -11,12 +11,12 @@ const ubicacion = {
     },
     addUbicacion: function(ubicacion, callback) {
 
-        return db.query("Insert into ubicacion values(?,?,?,'')", [ubicacion.id_ubicacion, ubicacion.nombre_ciudad, ubicacion.pais_idpais], callback)
+        return db.query("Insert into ubicacion values(?,?,?,?,?)", [ubicacion.id_ubicacion, ubicacion.coordenadas, ubicacion.longitud, ubicacion.latitud. ubicacion.ciudad_idciudad], callback)
     },
-    deleteUbicacion: function(ciudadId, callback) {
-        return db.query("DELETE FROM ubicacion WHERE id_ciudad = ?", [ciudadId], callback)
+    deleteUbicacion: function(ubicacionId, callback) {
+        return db.query("DELETE FROM ubicacion WHERE id_ubicacion = ?", [ubicacionId], callback)
     },
-    updateUbicacion: function(ciudadId, ciudad, callback) {
+    updateUbicacion: function(ubicacionId, ubicacion, callback) {
 
         return db.query("UPDATE ubicacion SET coordenadas=?, longitud=?, latitud= ?, ciudad_idciudad=?  WHERE id_ubicacion=?", [ubicacion.coordenadas, ubicacion.longitud, ubicacion.latitud, ubicacion.ciudad_idciudad, ubicacionId], callback)
     }
@@ -89,7 +89,7 @@ ubicacion.updateUbicacion(req.params.id_ubicacion, req.body, function(err, rows)
 app.delete ('/api/ubicacion/:ubicacionId', (req,res) =>
 {
 
-    ubicacion.deleteUbicacion(req.params.ciudadId, function(err, count) {
+    ubicacion.deleteUbicacion(req.params.ubicacionId, function(err, count) {
            if (err) {
                res.json(err);
            } else {
