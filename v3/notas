@@ -1,3 +1,19 @@
 npm init para inciar el sistema nodejs
 instalar expres
 instalar body-parser
+
+
+
+crear index.js normal
+
+crear models/ por cada tabla
+en cada model va una funcion en la cual lleva la consulta por cada
+
+
+crear controllers se crea  funciones por cada metodo
+dentro de cada metodo de los controllers se llama los
+metodos de los model
+
+
+en el indes en cada metodo se envia y se llama a traves de las
+funciones de los controllers
