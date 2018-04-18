@@ -25,6 +25,16 @@ api.put ('/pais/:id_pais', paisController.updatePais)
 api.delete ('/pais/:paisId',paisController.deletePais)
 
 
+// ****************************************//
+const ciudadController = require ('../controllers/ciudad')
+
+api.get('/ciudad',ciudadController.getCiudades)
+api.get ('/ciudad/:ciudadId', ciudadController.getCiudad)
+api.post ('/ciudad', ciudadController.postCiudad)
+api.put ('/ciudad/:id_ciudad', ciudadController.updateCiudad)
+api.delete ('/ciudad/:ciudadId', ciudadController.deleteCiudad)
+
+
 
 
 
