@@ -21,3 +21,6 @@ funciones de los controllers
 
 modularizamo separamos la funcion de express en el
 archivo app.js
+
+crear archi routes
+por cada tabla o aniadirlo a las rutas
