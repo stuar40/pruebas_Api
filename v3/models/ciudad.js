@@ -18,7 +18,7 @@ const ciudad = {
     },
     updateCiudad: function(ciudadId, ciudad, callback) {
 
-        return db.query("UPDATE pais SET nombre_ciudad=?, pais_idpais=?  WHERE id_ciudad=?", [ciudad.nombre_ciudad, ciudad.pais_idpais, ciudadId], callback)
+        return db.query("UPDATE ciudad SET nombre_ciudad=?, pais_idpais=?  WHERE id_ciudad=?", [ciudad.nombre_ciudad, ciudad.pais_idpais, ciudadId], callback)
     }
 };
 module.exports = ciudad;
@@ -35,7 +35,7 @@ app.get('/api/ciudad',function (req,res)
 {
 
 
-dato.getAllCiudad(function(err, rows) {
+ciudad.getAllCiudad(function(err, rows) {
             if (err) {
                 res.json(err);
             } else {
@@ -49,7 +49,7 @@ dato.getAllCiudad(function(err, rows) {
 app.get ('/api/ciudad/:ciudadId', (req,res) =>
 {
 
-pais.getPaisById (req.params.paisId, function(err, rows) {
+ciudad.getCiudadById (req.params.ciudadId, function(err, rows) {
             if (err) {
                 res.json(err);
             } else {
@@ -63,7 +63,7 @@ pais.getPaisById (req.params.paisId, function(err, rows) {
 app.post ('/api/ciudad', (req,res) =>
 {
 
-dato.addCiudad(req.body, function(err, count) {
+ciudad.addCiudad(req.body, function(err, count) {
         if (err) {
             res.json(err);
         } else {
@@ -76,7 +76,7 @@ dato.addCiudad(req.body, function(err, count) {
 app.put ('/api/ciudad/:id_ciudad', (req,res) =>
 {
 
-dato.updateCiudad(req.params.id_pais, req.body, function(err, rows) {
+ciudad.updateCiudad(req.params.id_ciudad, req.body, function(err, rows) {
        if (err) {
            res.json(err);
        } else {
@@ -89,7 +89,7 @@ dato.updateCiudad(req.params.id_pais, req.body, function(err, rows) {
 app.delete ('/api/ciudad/:ciudadId', (req,res) =>
 {
 
-    dato.deleteCiudad(req.params.ciudadId, function(err, count) {
+  ciudad.deleteCiudad(req.params.ciudadId, function(err, count) {
            if (err) {
                res.json(err);
            } else {

@@ -39,7 +39,7 @@ app.get('/api/pais',function (req,res)
 
 })
 */
-dato.getAllPais(function(err, rows) {
+pais.getAllPais(function(err, rows) {
             if (err) {
                 res.json(err);
             } else {
@@ -50,7 +50,7 @@ dato.getAllPais(function(err, rows) {
 
 })
 
-app.get ('/api/pais/:paisId', (req,res) =>
+pais.get ('/api/pais/:paisId', (req,res) =>
 {
   /*
 let datoId = req.params.datoId
@@ -89,7 +89,7 @@ app.post ('/api/pais', (req,res) =>
       return res.send({error: false, data: results, message: 'New task has been created successfully.'})
 })*/
 
-dato.addPais(req.body, function(err, count) {
+pais.addPais(req.body, function(err, count) {
         if (err) {
             res.json(err);
         } else {
@@ -116,7 +116,7 @@ connection.query("UPDATE datos SET Nombre=?,Apellido=?, Direccion=?, Correo=? WH
  return res.send({ error: false, data: results, message: 'Task has been updated successfully.' })
 })*/
 
-dato.updatePais(req.params.id_pais, req.body, function(err, rows) {
+pais.updatePais(req.params.id_pais, req.body, function(err, rows) {
        if (err) {
            res.json(err);
        } else {
@@ -135,7 +135,7 @@ app.delete ('/api/pais/:paisId', (req,res) =>
         return res.send({ error: false, data: results, message: 'se ha eliminado con exito' });
     })*/
 
-    dato.deletePais(req.params.paisId, function(err, count) {
+    pais.deletePais(req.params.paisId, function(err, count) {
            if (err) {
                res.json(err);
            } else {
