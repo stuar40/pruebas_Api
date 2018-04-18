@@ -35,6 +35,19 @@ api.put ('/ciudad/:id_ciudad', ciudadController.updateCiudad)
 api.delete ('/ciudad/:ciudadId', ciudadController.deleteCiudad)
 
 
+// ****************************************//
+
+
+const ubicaController = require ('../controllers/ubicacion')
+
+api.get('/ubicacion',ubicaController.getUbicaciones)
+api.get ('/ubicacion/:ubicacionId', ubicaController.getUbicacion)
+api.post ('/ubicacion', ubicaController.postUbicacion)
+api.put ('/ubicacion/:id_ubicacion', ubicaController.updateUbicacion)
+api.delete ('/ubicacion/:ubicacionId',ubicaController.deleteUbicacion)
+
+
+
 
 
 

@@ -1,30 +1,81 @@
 'use strict'
-const ciudad = require ('../models/ciudad')
+const ubicacion = require ('../models/ubicacion')
 
 //=====================================================
-function getPais(req,res)
-{}
+function getUbicacion(req,res)
+{
+
+  ubicacion.getUbicacionById (req.params.ubicacionId, function(err, rows) {
+              if (err) {
+                  res.json(err);
+              } else {
+                  res.json(rows);
+              }
+          });
+
+
+}
 
 //=====================================================
-function getPaises(req, res)
-{}
+function getUbicaciones(req, res)
+{
+
+
+  ubicacion.getAllUbicacion(function(err, rows) {
+              if (err) {
+                  res.json(err);
+              } else {
+                  res.json(rows);
+              }
+          });
+
+
+}
 
 //=====================================================
-function postPais(req, res)
-{}
+function postUbicacion(req, res)
+{
+
+  ubicacion.addUbicacion(req.body, function(err, count) {
+          if (err) {
+              res.json(err);
+          } else {
+              res.json(req.body); //or return count for 1 & 0
+          }
+      });
+}
 
 //=====================================================
-function updatePais(req, res)
-{}
+function updateUbicacion(req, res)
+{
 
-function deletePais(req, res)
-{}
+  ubicacion.updateUbicacion(req.params.id_ubicacion, req.body, function(err, rows) {
+         if (err) {
+             res.json(err);
+         } else {
+             res.json(rows);
+         }
+     });
+
+}
+
+function deleteUbicacion(req, res)
+{
+
+      ubicacion.deleteUbicacion(req.params.ubicacionId, function(err, count) {
+             if (err) {
+                 res.json(err);
+             } else {
+                 res.json(count);
+             }
+         });
+}
 
 module.exports=
 {
-  getPais,
-  getPaises,
-  postPais,
-  updatePais,
-  deletePais
+  getUbicacion,
+  getUbicaciones,
+  postUbicacion,
+  updateUbicacion,
+  deleteUbicacion
 }
