@@ -17,3 +17,10 @@ metodos de los model
 
 en el indes en cada metodo se envia y se llama a traves de las
 funciones de los controllers
+
+
+modularizamo separamos la funcion de express en el
+archivo app.js
+
+crear archi routes
+por cada tabla o aniadirlo a las rutas
