@@ -44,4 +44,15 @@ cargamos el controllers
 definimos las rutass
 
 -- archivo appp
- consumimos  los routes 
+ consumimos  los routes
+
+
+ ------ conexion a mi servidor local de bd----------
+
+ const connection = mysql.createConnection(
+     {
+ 		 host: 'localhost',
+ 		 user: 'AutoParking',
+ 		 password: '*Deleonsocgio10',
+ 		 database: 'autoparking'
+     }

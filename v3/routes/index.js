@@ -58,4 +58,11 @@ api.post ('/parqueo', parqueoController.postParqueo)
 api.put ('/parqueo/:id_parqueo', parqueoController.updateParqueo )
 api.delete ('/parqueo/:parqueoId', parqueoController.deleteParqueo)
 
+
+//METODO para sub consultas
+const subConsultasController = require ('../controllers/subConsultas')
+api.get ('/subConsultas/:subConsultasId', subConsultasController.getsubConsulta)
+
+//.............................................//
+
 module.exports = api

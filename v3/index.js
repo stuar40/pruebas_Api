@@ -12,10 +12,10 @@ const mysql = require('mysql'),
 //creamos la conexion a nuestra base de datos con los datos de acceso de cada uno
 connection = mysql.createConnection(
     {
-        host: 'localhost',
-        user: 'autoparking',
-        password: 'autoparking',
-        database: 'autoparking'
+		 host: 'localhost',
+		  user: 'autoparking',
+		  password: 'autoparking',
+		  database: 'autoparking'
     }
 );
 connection.connect()
