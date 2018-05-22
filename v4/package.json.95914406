@@ -1,0 +1,20 @@
+{
+  "name": "v3",
+  "version": "1.0.0",
+  "description": "proyecto autoparking",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SmartSoft",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.3"
+  }
+}
